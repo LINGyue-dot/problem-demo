@@ -26,8 +26,7 @@ const arr = [
   },
 ];
 const Demo: React.FC<DemoProps> = ({}) => {
-  const [value, setValue] = useState(1);
-
+  const [value, setValue] = useState(2);
   const currentItem = useMemo(
     () => arr.find((i) => i.value === value),
     [value]
@@ -48,7 +47,13 @@ const Demo: React.FC<DemoProps> = ({}) => {
 
   return (
     <div
-      style={{ margin: 50, width: 50, height: 50, border: "solid 2px #eee" }}
+      style={{
+        margin: 50,
+        width: 24,
+        height: 24,
+        border: "solid 2px #eee",
+        color: "#eee",
+      }}
     >
       <Dropdown
         trigger={["contextMenu"]}
@@ -57,7 +62,7 @@ const Demo: React.FC<DemoProps> = ({}) => {
         // @ts-ignore
         alignPoint={false}
       >
-        <div className="icon"> {currentItem?.icon}</div>
+        <div> {currentItem?.icon}</div>
       </Dropdown>
     </div>
   );
